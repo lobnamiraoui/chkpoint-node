@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "generate-password": "^1.7.1"
+  },
+  "name": "chkpoint-node",
+  "version": "1.0.0",
+  "main": "email-sender.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
