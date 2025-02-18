@@ -1,20 +1,20 @@
-const nodemailer = require('nodemailer');
-
+const nodemailer = require("nodemailer");
+require('dotenv').config();
 // Créer un transporteur
 const transporter = nodemailer.createTransport({
-  service: 'gmail',  
+  service: "gmail",
   auth: {
-    user: 'lobnamiraoui@gmail.com',
-    pass: '1235lobna',
+    user: process.env.CLIENT_EMAIL,
+    pass: process.env.GOOGLE_PASS,
   },
 });
 
 // Options de l'email
 const mailOptions = {
-  from: 'lobnamiraoui@gmail.com',
-  to: 'lobnamiraoui@gmail.com',
-  subject: 'Test Email Node.js',
-  text: 'Hello from node.js!',
+  from: process.env.CLIENT_EMAIL,
+  to: process.env.USER_EMAIL,
+  subject: "Test Email Node.js",
+  text: "hello from node js",
 };
 
 // Envoyer l'email
@@ -22,5 +22,5 @@ transporter.sendMail(mailOptions, (error, info) => {
   if (error) {
     return console.log(error);
   }
-  console.log('Email sent: ' + info.response);
+  console.log("Email sent: " + info.response);
 });
